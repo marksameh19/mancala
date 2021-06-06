@@ -28,7 +28,6 @@ def player_move(moves,player):
         if player == 1 :
             userInput = input("Enter a number to choose a bin or enter 'q' to QUIT: ")
             if userInput == "q":
-                playing = False
                 chosenBin = 13
                 return chosenBin
             elif userInput == "5":
@@ -50,7 +49,6 @@ def player_move(moves,player):
         elif player == 2 :
             userInput = input("Enter a number to choose a bin or enter 'q' to QUIT: ")
             if userInput == "q":
-                playing = False
                 chosenBin = 13
                 return chosenBin
             elif userInput == "5":
