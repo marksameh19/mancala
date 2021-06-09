@@ -1,7 +1,7 @@
 import global_settings
 from game import game
 
-while(True): # samuel
+while(True):
     mode = 0
     print("1. human against human")
     print("2. human against ai")
@@ -101,9 +101,4 @@ while(True): # samuel
     print("//////////////////////////////////////////")
     print("//////////////////////////////////////////")
     print("\n")
-
-# state = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
-# Maxmin(state,8,0)
-# state = [2,1,0,1,4,0,11,3,2,0,0,1,10,13]
-# makemove(state,12,0,0)
 
