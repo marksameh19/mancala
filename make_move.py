@@ -1,6 +1,6 @@
-def makemove(state,move,player,test_mode): #hazem
-    global playerturn
-    global ai_turn
+import global_settings
+
+def makemove(state,move,player,test_mode):
     i = move
     amount = state[move]
     state[move] = 0
@@ -13,13 +13,13 @@ def makemove(state,move,player,test_mode): #hazem
         state[i%14] += 1
         amount -= 1
     
-    if(player == 1 and state[i%14] == 1 and state[(12-i)%14] != 0 and i%14 >= 0 and i%14 < 6 and stealing):
+    if(player == 1 and state[i%14] == 1 and state[(12-i)%14] != 0 and i%14 >= 0 and i%14 < 6 and global_settings.stealing):
         state[6] += state[i%14]
         state[6] += state[(12-i)%14]
         state[i%14] = 0
         state[(12-i)%14] = 0
 
-    elif(player == 0 and state[i%14] == 1 and state[(12-i)%14] != 0 and i%14 > 6 and i%14 < 13 and stealing):
+    elif(player == 0 and state[i%14] == 1 and state[(12-i)%14] != 0 and i%14 > 6 and i%14 < 13 and global_settings.stealing):
         state[13] += state[i%14]
         state[13] += state[(12-i)%14]
         state[i%14] = 0
@@ -46,10 +46,10 @@ def makemove(state,move,player,test_mode): #hazem
         state[5] = 0
 
     if(player == 1 and i%14 != 6 and not(test_mode)):
-        playerturn =  int(not(playerturn))
+        playerturn =  int(not(global_settings.playerturn))
     if(player == 0 and i%14 != 13 and not(test_mode)):
         playerturn =  int(not(playerturn))
     if(player == 1 and i%14 != 6 and test_mode):
-        ai_turn =  int(not(ai_turn))
+        ai_turn =  int(not(global_settings.ai_turn))
     if(player == 0 and i%14 != 13 and test_mode):
         ai_turn =  int(not(ai_turn))

@@ -1,6 +1,6 @@
-easy = 2
-medium = 6
-hard = 10
+import global_settings
+from game import game
+global_settings.init()
 
 while(True): # samuel
     mode = 0
@@ -82,15 +82,15 @@ while(True): # samuel
             userinput = input("choose the ai difficulty: ")
             if( userinput == "1"):
                 print("\nai is on easy difficulty\n")
-                game(0,1,easy)
+                game(0,1, global_settings.easy)
                 break
             elif( userinput == "2"):
                 print("\nai is on medium difficulty\n")
-                game(0,1,medium)
+                game(0,1, global_settings.medium)
                 break
             elif( userinput == "3"):
                 print("\nai is on hard difficulty\n")
-                game(0,1,hard)
+                game(0,1, global_settings.hard)
                 break
             else:
                 print("please enter either 1 ,2 or 3\n")
