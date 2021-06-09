@@ -1,5 +1,5 @@
 def player_move(moves,player): 
-    userinput = " "
+    userInput = " "
     chosenBin = -1
     messageCode = 0
     message = " "

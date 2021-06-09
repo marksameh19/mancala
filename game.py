@@ -1,10 +1,17 @@
+import global_settings
+from show_game import show_game
+from make_move import makemove
+from player_move import player_move
+from end_game import end_game
+from winning_message import winning_message
+
 def game(player1,player2,diffculty=6): #samuel
     state = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
     game_not_finished = True
     quit = False
     show_game(state)
     while(game_not_finished):
-        if(playerturn):
+        if(global_settings.playerturn):
             if(player1 == 1): #ai player
                 move = Maxmin(state,diffculty,0)
                 makemove(state,move,1,0)
