@@ -1,6 +1,5 @@
 import global_settings
 from game import game
-global_settings.init()
 
 while(True): # samuel
     mode = 0
@@ -40,10 +39,10 @@ while(True): # samuel
             print("2. without stealing")
             userinput = input("play with or without stealing? ")
             if( userinput == "1"):
-                stealing = 1
+                global_settings.stealing = 1
                 break
             elif( userinput == "2"):
-                stealing = 0
+                global_settings.stealing = 0
                 break
             else:
                 print("please enter either 1 or 2\n")
@@ -68,10 +67,10 @@ while(True): # samuel
             print("2. without stealing")
             userinput = input("play with or without stealing? ")
             if( userinput == "1"):
-                stealing = 1
+                global_settings.stealing = 1
                 break
             elif( userinput == "2"):
-                stealing = 0
+                global_settings.stealing = 0
                 break
             else:
                 print("please enter either 1 or 2\n")

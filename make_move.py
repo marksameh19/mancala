@@ -46,10 +46,10 @@ def makemove(state,move,player,test_mode):
         state[5] = 0
 
     if(player == 1 and i%14 != 6 and not(test_mode)):
-        playerturn =  int(not(global_settings.playerturn))
+        global_settings.playerturn =  int(not(global_settings.playerturn))
     if(player == 0 and i%14 != 13 and not(test_mode)):
-        playerturn =  int(not(playerturn))
+        global_settings.playerturn =  int(not(global_settings.playerturn))
     if(player == 1 and i%14 != 6 and test_mode):
-        ai_turn =  int(not(global_settings.ai_turn))
+        global_settings.ai_turn =  int(not(global_settings.ai_turn))
     if(player == 0 and i%14 != 13 and test_mode):
-        ai_turn =  int(not(ai_turn))
+        global_settings.ai_turn =  int(not(global_settings.ai_turn))
