@@ -5,7 +5,7 @@ from player_move import player_move
 from end_game import end_game
 from winning_message import winning_message
 
-def game(player1,player2,diffculty=6): #samuel
+def game(player1,player2,diffculty=6):
     state = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
     game_not_finished = True
     quit = False
@@ -34,7 +34,6 @@ def game(player1,player2,diffculty=6): #samuel
         show_game(state)
         game_not_finished = end_game(state)
     if(quit):
-        print("\ntoo coward to challenge our ai?\n")
         return
     winning_message(state)
 
