@@ -1,16 +1,15 @@
-import get_children
-import end_game
+from get_children import get_children
+from end_game import end_game
 import global_settings
 
 
-def Maxmin(state, depth, maximizingplayer, alpha = negative_infnity, beta = postive_infnity , counter=0) :
-    global ai_turn
+def Maxmin(state, depth, maximizingplayer, alpha = global_settings.negative_infnity, beta = global_settings.postive_infnity , counter=0) :
     counter += 1
     if depth == 0 or not(end_game(state)):
         return state[6]-state[13]
     if maximizingplayer :
-        ai_turn = 1
-        value = negative_infnity
+        global_settings.ai_turn = 1
+        value = global_settings.negative_infnity
         #values = []
         for child in get_children(state,1) :
             new_value = Maxmin(child[0] , depth - 1, child[2] , alpha , beta , counter)
@@ -27,8 +26,8 @@ def Maxmin(state, depth, maximizingplayer, alpha = negative_infnity, beta = post
         return value
     else :
         #values = []
-        value =  postive_infnity
-        ai_turn = 0
+        value =  global_settings.postive_infnity
+        global_settings.ai_turn = 0
         for child in get_children(state,0) :
             new_value = Maxmin(child[0] , depth - 1, child[2] , alpha , beta , counter)
             #values.append(new_value)

@@ -1,15 +1,14 @@
-from game import makemove
+from make_move import makemove
+from available_moves import available_moves
 import global_settings
-import available_moves
-import makemove
+
 
 def get_children(state,player): 
-    global ai_turn
-    constant_turn = ai_turn
+    constant_turn = global_settings.ai_turn
     children = []
     for move in available_moves(state,player):
         new_state = state[:]
         makemove(new_state,move,player,1)
-        children.append([new_state,move,ai_turn])
-        ai_turn = constant_turn
+        children.append([new_state,move,global_settings.ai_turn])
+        global_settings.ai_turn = constant_turn
     return children

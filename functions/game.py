@@ -4,6 +4,7 @@ from make_move import makemove
 from player_move import player_move
 from end_game import end_game
 from winning_message import winning_message
+from maxmin import Maxmin
 
 def game(player1,player2,diffculty=6):
     state = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
